@@ -1,0 +1,320 @@
+$all-screen: 100vh;
+$count-shadow-step: 2;
+$height-shadow-step: 10;
+$screen-height-shadow-step: calc(
+  #{$all-screen} - #{$height-shadow-step * $count-shadow-step}px
+);
+$color-shadow-step-collection: ($c-grey-550, $c-grey-450);
+
+.section-gradient {
+  min-height: $screen-height-shadow-step;
+  border-radius: 0 0 12px 12px;
+  position: relative;
+  margin-bottom: #{$height-shadow-step * $count-shadow-step}px;
+
+  &__shadow {
+    position: absolute;
+    height: 10px;
+    border-radius: 0 0 12px 12px;
+    @for $i from 1 through $count-shadow-step {
+      &_#{$i} {
+        bottom: -#{$height-shadow-step * $i}px;
+        width: calc(100% - #{40 * $i}px);
+        background-color: nth($color-shadow-step-collection, $i);
+        left: #{20 * $i}px;
+      }
+    }
+  }
+}
+
+.main-wrap {
+  min-height: $screen-height-shadow-step;
+  position: relative;
+  &__bg {
+    position: absolute;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: hidden;
+
+    &-object {
+      position: absolute;
+      height: 100%;
+    }
+  }
+  &__content {
+    position: relative;
+    min-height: $screen-height-shadow-step;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__nav {
+    padding-bottom: 45px;
+  }
+}
+
+.main-header {
+  display: grid;
+  column-gap: 20px;
+  padding-top: 50px;
+  grid-template-areas: "info" "logo" "nav";
+  @media screen and (min-width: $md) {
+    grid-template-areas: "logo info" "logo nav";
+  }
+  &__logo {
+    grid-area: logo;
+    margin-bottom: 30px;
+    @media screen and (min-width: $md) {
+      margin-bottom: 0;
+    }
+  }
+  &__info {
+    grid-area: info;
+    margin-bottom: 30px;
+    @media screen and (min-width: $md) {
+      margin-bottom: 16px;
+    }
+  }
+  &__nav {
+    grid-area: nav;
+  }
+  &__info,
+  &__nav {
+    justify-self: start;
+    @media screen and (min-width: $md) {
+      justify-self: end;
+    }
+  }
+  &__link:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+.logo {
+  width: 100%;
+  max-width: 130px;
+}
+
+.btn-lang {
+  border: none;
+  background-color: transparent;
+  font-size: $txt-exsm;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 7px;
+  border-radius: 8px;
+  &_active {
+    background-color: $c-accent;
+  }
+}
+
+.contact-info {
+  &__item {
+    padding-left: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &:before {
+      content: "";
+      position: absolute;
+      padding: 3px;
+      border-radius: 50%;
+      left: 0;
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 5px;
+  &:hover {
+    color: $c-accent;
+    border-bottom-color: $c-accent;
+  }
+}
+
+.btn-circle {
+  width: 42px;
+  height: 42px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid rgba($c-white, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+  &__arrow {
+    display: inline-block;
+    max-width: 18px;
+    width: 100%;
+    path {
+      stroke: white;
+      transition: stroke 0.3s ease;
+    }
+  }
+  &:hover {
+    border-color: $c-accent;
+    path {
+      stroke: $c-accent;
+    }
+  }
+}
+
+.slider-wrap {
+  margin-top: 60px;
+  gap: 60px;
+
+  &__nav {
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    }
+
+  &__btn {
+    font-size: $h1;
+    font-weight: 700;
+    color: $c-grey-600;
+    width: 375px;
+    &-gradient {
+      color: transparent;
+      background-clip: text;
+      background-image: $gradient-red-text;
+    }
+  }
+
+  &__line {
+    width: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  &__content {
+    color: white;
+    max-width: 581px;
+    &-h2{
+      font-size: $h2;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.cards-wrap {
+  margin-top: 60px;
+
+  &__headline {
+    margin-bottom: 60px;
+  }
+
+  &__h4 {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    margin-bottom: 10px;
+    font-size: $h3-caps;
+    color: $c-blue-400;
+    text-transform: uppercase;
+    font-weight: 700;
+    img {
+      height: 12px;
+    }
+  }
+ 
+  &__header {
+    font-weight: 700;
+    color: transparent;
+    background-clip: text;
+    background-image: $gradient-red-text;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding-bottom: 60px;
+  }
+
+  &__card{
+    max-width: 400px;
+    width: 30%;
+  }
+
+  &__icon {
+    max-width: 92px;
+    margin-bottom: 30px;
+  }
+
+  &__h2 {
+    font-size: $h3;
+    color: $c-blue-400;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 27px;
+  }
+
+  &__txt {
+    line-height: 26px;
+    color: white;
+  }
+
+ }
+
+
+ .team-slider {
+  margin-top: 60px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  border-radius: 12px;
+  background-color: $c-grey-400;
+
+  &__img {
+    max-width: 400px;
+  }
+
+  &__h4 {
+    margin-right: 2px;
+    margin-bottom: 5px;
+    font-size: $h3-caps;
+    color: $c-blue-400;
+    text-transform: uppercase;
+    font-weight: 700;
+    img {
+      height: 12px;
+    }
+  }
+
+  &__h3 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: transparent;
+    background-clip: text;
+    background-image: $gradient-red-text;
+  }
+
+  &__name {
+    color: $c-grey-600;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  &__h6 {
+    font-size: $h3-caps;
+    font-weight: 400;
+    color: $c-grey-600;
+  }
+
+}
+
+.slider-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+ 
+ 
