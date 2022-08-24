@@ -60,20 +60,20 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   column-gap: 20px;
   padding-top: 50px;
   grid-template-areas: "info" "logo" "nav";
-  @media screen and (min-width: $md) {
+  @media screen and (min-width: $sm) {
     grid-template-areas: "logo info" "logo nav";
   }
   &__logo {
     grid-area: logo;
     margin-bottom: 30px;
-    @media screen and (min-width: $md) {
+    @media screen and (min-width: $sm) {
       margin-bottom: 0;
     }
   }
   &__info {
     grid-area: info;
     margin-bottom: 30px;
-    @media screen and (min-width: $md) {
+    @media screen and (min-width: $sm) {
       margin-bottom: 16px;
     }
   }
@@ -83,7 +83,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   &__info,
   &__nav {
     justify-self: start;
-    @media screen and (min-width: $md) {
+    @media screen and (min-width: $sm) {
       justify-self: end;
     }
   }
@@ -171,40 +171,54 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
 .slider-wrap {
   margin-top: 60px;
   gap: 60px;
-
+  flex-wrap: wrap;
+  align-items: center;
+ 
+  
   &__nav {
-    max-width: 375px;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding-right: 60px;
+    border-right: 4px solid rgba(255, 255, 255, 0.3);
     }
 
   &__btn {
     font-size: $h1;
     font-weight: 700;
     color: $c-grey-600;
+    text-decoration: none;
     width: 375px;
-    &-gradient {
+    cursor: pointer;
+    &:hover {
       color: transparent;
       background-clip: text;
       background-image: $gradient-red-text;
     }
-  }
-
-  &__line {
-    width: 4px;
-    background-color: rgba(255, 255, 255, 0.3);
+    &-gradient {
+      color: transparent;
+      background-clip: text;
+      background-image: $gradient-red-text;
+      &:hover {
+        color: $c-grey-600;
+      }
+    }
   }
 
   &__content {
     color: white;
-    max-width: 581px;
     &-h2{
       font-size: $h2;
       margin-bottom: 30px;
     }
+
+    &-txt {
+    max-width: 470px;
+    line-height: 30px;
+    }
   }
 }
+
 
 .cards-wrap {
   margin-top: 60px;
@@ -216,14 +230,17 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   &__h4 {
     display: flex;
     flex-direction: row;
-    gap: 2px;
+    gap: 4px;
     margin-bottom: 10px;
     font-size: $h3-caps;
     color: $c-blue-400;
     text-transform: uppercase;
     font-weight: 700;
-    img {
-      height: 12px;
+    cursor: pointer;
+    &:hover {
+      color: transparent;
+      background-clip: text;
+      background-image: $gradient-red-text;
     }
   }
  
@@ -271,6 +288,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
  .team-slider {
   margin-top: 60px;
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   align-items: center;
   border-radius: 12px;
@@ -281,14 +299,19 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   }
 
   &__h4 {
-    margin-right: 2px;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
     margin-bottom: 5px;
     font-size: $h3-caps;
     color: $c-blue-400;
     text-transform: uppercase;
     font-weight: 700;
-    img {
-      height: 12px;
+    cursor: pointer;
+    &:hover {
+      color: transparent;
+      background-clip: text;
+      background-image: $gradient-red-text;
     }
   }
 
@@ -323,6 +346,11 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
  
 .container-logo {
   max-width: 1440px;
+  @media (min-width: 1140px ) {
+    margin: 0 auto;
+    padding: 0 $container-space;
+    width: 100%;
+  }
 }
 
 .logo-wrap {
@@ -352,21 +380,30 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   }
 }
 
+
+
 .bg-color {
   background-color: $c-grey-300;
 }
 
 .pub-wrap {
-  padding-top: 30px;
+  padding: 30px 0 30px;
+  border-bottom: 2px solid #E6E6F0;
+
   &__h4 {
-    margin-right: 2px;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
     margin-bottom: 5px;
     font-size: $h3-caps;
     color: $c-blue-400;
     text-transform: uppercase;
     font-weight: 700;
-    img {
-      height: 12px;
+    cursor: pointer;
+    &:hover {
+      color: transparent;
+      background-clip: text;
+      background-image: $gradient-red-text;
     }
   }
 
@@ -407,6 +444,13 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
     font-size: $txt-normal;
     font-weight: 700;
     margin-bottom: 15px;
+    line-height: 22px;
+    cursor: pointer;
+    &:hover {
+      color: transparent;
+      background-clip: text;
+      background-image: $gradient-red-text;
+    }
   }
 
   &__h5 {
@@ -427,5 +471,92 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
     font-size: $h3-caps;
     margin-top: 15px;
     line-height: 22px;
+  }
+}
+
+.footer {
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &__map-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+  }
+  
+  &__map {
+
+    &-list {
+      align-items: center;
+      gap: 26px;
+      
+    }
+  
+    &-txt {
+      color: $c-indigo;
+      
+    }
+  
+    &-link {
+      font-size: $txt-exsm;
+      font-weight: 700;
+      position: relative;
+      text-transform: uppercase;
+      color: $c-blue-400;
+      &:before {
+        content: "";
+        position: absolute;
+        padding: 6px;
+        border-radius: 50%;
+        left: 0;
+      }
+      cursor: pointer;
+    &:hover {
+      color: transparent;
+      background-clip: text;
+      background-image: $gradient-red-text;
+    }
+    }
+  }
+
+  &__contact {
+    &-list {
+      align-items: center;
+      gap: 26px;
+    }
+
+    &-tel {
+      font-weight: 700;
+      color: $c-indigo-alt;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        padding: 6px;
+        border-radius: 50%;
+        left: 0;
+      }
+    }
+
+    &-email {
+      font-weight: 700;
+      color: $c-blue-400;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        padding: 6px;
+        border-radius: 50%;
+        left: 0;
+      }
+    }
+  }
+
+  &__privacy-policy {
+    &-txt {
+      font-weight: 400;
+      color: $c-grey-600;
+    }
   }
 }
