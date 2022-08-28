@@ -170,18 +170,6 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
 
 .slider-wrap {
   margin-top: 60px;
-  gap: 60px;
-  flex-wrap: wrap;
-  align-items: center;
- 
-  
-  &__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding-right: 60px;
-    border-right: 4px solid rgba(255, 255, 255, 0.3);
-    }
 
   &__btn {
     font-size: $h1;
@@ -190,23 +178,12 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
     text-decoration: none;
     width: 375px;
     cursor: pointer;
-    &:hover {
-      color: transparent;
-      background-clip: text;
-      background-image: $gradient-red-text;
-    }
-    &-gradient {
-      color: transparent;
-      background-clip: text;
-      background-image: $gradient-red-text;
-      &:hover {
-        color: $c-grey-600;
-      }
-    }
+    
   }
 
   &__content {
     color: white;
+   
     &-h2{
       font-size: $h2;
       margin-bottom: 30px;
@@ -218,6 +195,57 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
     }
   }
 }
+
+.carousel {
+  display: flex;
+}
+
+.carousel-indicators {
+  max-width: 439px;
+  width: 100%;
+  border-right: 4px solid rgba(255, 255, 255, 0.3);
+  position: static;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  gap: 30px;
+  padding-right: 60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
+.carousel-indicators [data-bs-target] {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin-right: 0;
+  margin-left: 0;
+  text-indent: 0;
+  cursor: pointer;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: none;
+  opacity: 1;
+  transition: opacity .6s ease;
+  &.active {
+    color: transparent;
+    background-clip: text;
+    background-image: $gradient-red-text;
+  }
+}
+
+
+
 
 
 .cards-wrap {
@@ -252,21 +280,22 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   }
 
   &__cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     gap: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+    grid-auto-rows: minmax(268px, auto);
     padding-bottom: 60px;
   }
 
   &__card{
     max-width: 400px;
-    width: 30%;
   }
 
   &__icon {
-    max-width: 92px;
-    margin-bottom: 30px;
+    object-fit: cover;
+    width: 100%;
+    height: 92px;
+    width: 92px;
   }
 
   &__h2 {
@@ -288,7 +317,6 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
  .team-slider {
   margin-top: 60px;
   display: flex;
-  flex-wrap: wrap;
   gap: 30px;
   align-items: center;
   border-radius: 12px;
@@ -296,6 +324,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
 
   &__img {
     max-width: 400px;
+    width: 100%;
   }
 
   &__h4 {
@@ -303,6 +332,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
     flex-direction: row;
     gap: 4px;
     margin-bottom: 5px;
+    margin-top: 30px;
     font-size: $h3-caps;
     color: $c-blue-400;
     text-transform: uppercase;
@@ -317,6 +347,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
 
   &__h3 {
     padding-bottom: 30px;
+    max-width: 860px;
     font-weight: 700;
     color: transparent;
     background-clip: text;
@@ -333,6 +364,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
     font-size: $h3-caps;
     font-weight: 400;
     color: $c-grey-600;
+    margin-bottom: 30px;
   }
 
 }
@@ -373,13 +405,13 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
   }
 
   &__img {
     width: 25%;
   }
 }
-
 
 
 .bg-color {
@@ -440,10 +472,10 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   }
 
   &__h3 {
+    text-decoration: none;
     color: $c-blue-400;
     font-size: $txt-normal;
     font-weight: 700;
-    margin-bottom: 15px;
     line-height: 22px;
     cursor: pointer;
     &:hover {
@@ -454,6 +486,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   }
 
   &__h5 {
+    margin-top: 15px;
     color: $c-grey-600;
     font-size: $txt-exsm;
     margin-bottom: 15px;

@@ -1,0 +1,115 @@
+.main-content {
+    padding-top: 60px;
+
+    &__img-wrap {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__img {
+        max-width: 1060px;
+        width: 100%;
+    }
+}
+
+.article-wrap {
+padding-top: 30px;
+
+    &__headline {
+        color: $c-indigo;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 37px;
+        padding-bottom: 15px;
+    }
+
+    &__h5 {
+        padding-bottom: 30px;
+        border-bottom: 4px solid $c-grey-500;
+        color: $c-grey-600;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: $txt-exsm;
+        line-height: 15px;
+    }
+
+    &__txt {
+        font-weight: 400;
+        font-size: $txt-normal;
+        line-height: 26px;
+        padding: 30px 0 30px;
+    }
+
+    &__h2 {
+        font-weight: 700;
+        line-height: 46px;
+        color: transparent;
+        background-clip: text;
+        background-image: $gradient-red-text;
+    }
+
+    &__h4 {
+        font-weight: 700;
+        font-size: $h3;
+        line-height: 27px;
+        color: $c-indigo-alt;
+        padding: 30px 0 15px;
+    }
+
+    &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        &-item {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            display: flex;
+            gap: 10px;
+        }
+    }
+    
+    &__number {
+        padding-left: 20px;
+        font-weight: 700;
+        color: $c-accent;
+    }
+
+    &__img-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__img {
+        max-width: 640px;
+        width: 100%;
+    }
+
+    &__img-txt {
+        font-weight: 400;
+        font-size: $h3-caps;
+        line-height: 22px;
+        color: $c-grey-600;
+    }
+
+    &__h3 {
+        font-weight: 700;
+        font-size: $h3;
+        line-height: 27px;
+        color: $c-indigo;
+        margin-bottom: -15px;
+    }
+
+    &__social-networks {
+        padding: 30px 0 60px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        border-top: 4px solid $c-grey-500;
+
+        &-img{
+            max-width: 42px;
+        }
+    }
+}

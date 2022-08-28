@@ -39,5 +39,8 @@
     }
     .link-primary {
       color: $c-blue-400 !important;
+      &:hover {
+        color: $c-accent !important;
+      }
     }
   }
