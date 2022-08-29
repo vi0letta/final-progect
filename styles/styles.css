@@ -516,6 +516,7 @@ body {
 .team-slider {
   margin-top: 60px;
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   align-items: center;
   border-radius: 12px;

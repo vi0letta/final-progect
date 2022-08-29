@@ -340,6 +340,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
  .team-slider {
   margin-top: 60px;
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   align-items: center;
   border-radius: 12px;
