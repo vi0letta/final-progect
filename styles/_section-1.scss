@@ -136,7 +136,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
       padding-top: 45px;
       @media (max-width: 500px) {
         width: 100vw;
-        background-color: rgba(245, 245, 250, 0.2);
+        background-color: rgba(245, 245, 250, 0.128);
       }
     }
   }
@@ -876,6 +876,12 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
       font-weight: 700;
       color: $c-blue-400;
       position: relative;
+      &:hover {
+        color: transparent;
+        background-clip: text;
+        background-image: $gradient-red-text;
+    
+      }
       &:before {
         content: "";
         position: absolute;

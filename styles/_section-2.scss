@@ -1,3 +1,37 @@
+.btn-primary-2{
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 8px;
+    &:hover {
+      color: $c-indigo;
+      background-color: $c-grey-500;
+      border-color:$c-grey-500;
+    }
+}
+
+.logo-svg-2 {
+    width: 100%;
+    max-width: 382px;
+}
+
+.color-2 {
+    color: $c-blue-400 !important;
+}
+
+.info-bgc {
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      left: -10px;
+      display: block;
+      padding-top: 45px;
+      @media (max-width: 500px) {
+        width: 100vw;
+        background-color: $c-grey-300;
+      }
+    }
+  }
 .main-content {
     padding-top: 60px;
 
@@ -9,6 +43,7 @@
     &__img {
         max-width: 1060px;
         width: 100%;
+        border-radius: 12px;
     }
 }
 
@@ -21,6 +56,10 @@ padding-top: 30px;
         font-size: 30px;
         line-height: 37px;
         padding-bottom: 15px;
+        @media (max-width: 375px) {
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 
     &__h5 {
@@ -46,6 +85,11 @@ padding-top: 30px;
         color: transparent;
         background-clip: text;
         background-image: $gradient-red-text;
+        @media (max-width: 375px) {
+            font-size: 30px;
+            line-height: 37px;
+
+        }
     }
 
     &__h4 {
@@ -54,6 +98,10 @@ padding-top: 30px;
         line-height: 27px;
         color: $c-indigo-alt;
         padding: 30px 0 15px;
+        @media (max-width: 375px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
 
     &__list {
@@ -99,6 +147,10 @@ padding-top: 30px;
         line-height: 27px;
         color: $c-indigo;
         margin-bottom: -15px;
+        @media (max-width: 375px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
 
     &__social-networks {

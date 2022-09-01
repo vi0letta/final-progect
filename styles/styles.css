@@ -325,7 +325,7 @@ body {
 @media (max-width: 500px) {
   .main-header__info::before {
     width: 100vw;
-    background-color: rgba(245, 245, 250, 0.2);
+    background-color: rgba(245, 245, 250, 0.128);
   }
 }
 .main-header__nav {
@@ -1063,6 +1063,12 @@ body {
   color: #24a3ff;
   position: relative;
 }
+.footer__contact-email:hover {
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-image: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
+}
 .footer__contact-email:before {
   content: "";
   position: absolute;
@@ -1075,6 +1081,41 @@ body {
   color: #b3b3ba;
 }
 
+.btn-primary-2 {
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 8px;
+}
+.btn-primary-2:hover {
+  color: #323264;
+  background-color: #e6e6f0;
+  border-color: #e6e6f0;
+}
+
+.logo-svg-2 {
+  width: 100%;
+  max-width: 382px;
+}
+
+.color-2 {
+  color: #24a3ff !important;
+}
+
+.info-bgc::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: -10px;
+  display: block;
+  padding-top: 45px;
+}
+@media (max-width: 500px) {
+  .info-bgc::before {
+    width: 100vw;
+    background-color: #f5f5fa;
+  }
+}
+
 .main-content {
   padding-top: 60px;
 }
@@ -1085,6 +1126,7 @@ body {
 .main-content__img {
   max-width: 1060px;
   width: 100%;
+  border-radius: 12px;
 }
 
 .article-wrap {
@@ -1096,6 +1138,12 @@ body {
   font-size: 30px;
   line-height: 37px;
   padding-bottom: 15px;
+}
+@media (max-width: 375px) {
+  .article-wrap__headline {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 .article-wrap__h5 {
   padding-bottom: 30px;
@@ -1120,12 +1168,24 @@ body {
           background-clip: text;
   background-image: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
 }
+@media (max-width: 375px) {
+  .article-wrap__h2 {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
 .article-wrap__h4 {
   font-weight: 700;
   font-size: 1.375rem;
   line-height: 27px;
   color: #46466e;
   padding: 30px 0 15px;
+}
+@media (max-width: 375px) {
+  .article-wrap__h4 {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 .article-wrap__list {
   display: flex;
@@ -1165,6 +1225,12 @@ body {
   line-height: 27px;
   color: #323264;
   margin-bottom: -15px;
+}
+@media (max-width: 375px) {
+  .article-wrap__h3 {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 .article-wrap__social-networks {
   padding: 30px 0 60px;
