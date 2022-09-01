@@ -6,6 +6,38 @@ $screen-height-shadow-step: calc(
 );
 $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
 
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.btn:focus{
+  color: white;
+  background-color:transparent;
+  border-color: transparent;
+  box-shadow: none;
+  }
+
+  .button:focus:not(:focus-visible) {
+    outline: none; 
+  }
+
+.btn-primary{
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 8px;
+  &:hover {
+    color: $c-indigo;
+    background-color: $c-grey-500;
+    border-color:$c-grey-500;
+  }
+}
+
+
 .section-gradient {
   min-height: $screen-height-shadow-step;
   border-radius: 0 0 12px 12px;
@@ -66,6 +98,9 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   @media screen and (min-width: $sm) {
     grid-template-areas: "logo info" "logo nav";
   }
+  @media (max-width: 500px) {
+    padding-top: 10px;
+  }
   
   &__logo {
     grid-area: logo;
@@ -79,13 +114,33 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
       justify-content: space-between;
     }
   }
+
   &__info {
     grid-area: info;
     margin-bottom: 30px;
+    position: relative;
     @media screen and (min-width: $sm) {
       margin-bottom: 16px;
     }
+    @media (max-width: 500px) {
+      justify-self: start;
+      width: 100%;
+      justify-content: space-between;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      left: -10px;
+      display: block;
+      padding-top: 45px;
+      @media (max-width: 500px) {
+        width: 100vw;
+        background-color: rgba(245, 245, 250, 0.2);
+      }
+    }
   }
+
   &__nav {
     grid-area: nav;
   }
@@ -128,17 +183,26 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
   line-height: 29px;
   text-align: center;
   &:hover {
+    background-color: $c-grey-500;
     color: $c-accent;
   }
 }
 
-
+.offcanvas-header {
+  justify-content: end;
+}
 
 
 .logo {
   width: 100%;
-  max-width: 130px;
+  display: flex;
+  justify-content: space-between;
+  &-svg {
+    max-width: 130px;
+    width: 100%;
+  }
 }
+
 
 .btn-lang {
   border: none;
@@ -567,7 +631,7 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
     @media (max-width: 768px) {
       width: 33%;
     }
-    @media (max-width: 450px) {
+    @media (max-width: 500px) {
       width: 100%;
     }
   }
