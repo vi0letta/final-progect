@@ -339,6 +339,9 @@ body {
     justify-self: end;
   }
 }
+.main-header__lang-btn {
+  position: relative;
+}
 .main-header__link {
   color: #fff;
 }
@@ -1105,7 +1108,7 @@ body {
   content: "";
   position: absolute;
   height: 100%;
-  left: -10px;
+  left: -15px;
   display: block;
   padding-top: 45px;
 }
@@ -1118,6 +1121,11 @@ body {
 
 .main-content {
   padding-top: 60px;
+}
+@media (max-width: 500px) {
+  .main-content {
+    padding-top: 0;
+  }
 }
 .main-content__img-wrap {
   display: flex;

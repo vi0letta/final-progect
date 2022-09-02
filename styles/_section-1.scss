@@ -151,6 +151,11 @@ $color-shadow-step-collection: ($c-grey-550, $c-grey-450);
       justify-self: end;
     }
   }
+
+  &__lang-btn {
+    position: relative;
+  }
+
   &__link {
     color: #fff;
   }
