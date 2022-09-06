@@ -1,4 +1,5 @@
 .btn-primary-2{
+    display: contents;
     background-color: transparent;
     border-color: transparent;
     border-radius: 8px;
@@ -6,6 +7,12 @@
       color: $c-indigo;
       background-color: $c-grey-500;
       border-color:$c-grey-500;
+    }
+}
+
+.d-none-2 {
+    @media (max-width: 510px) {
+        display: none;
     }
 }
 
@@ -165,6 +172,12 @@ padding-top: 30px;
 
         &-img{
             max-width: 42px;
+            padding: 9px;
+            background-color: $c-grey-300;
+            border-radius: 12px;
+            &:hover {
+                background-color: $c-grey-400;
+            }
         }
     }
 }

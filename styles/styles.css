@@ -989,6 +989,9 @@ body {
   max-width: 513px;
   min-height: 200px;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px 8px 0 0;
 }
 @media (max-width: 1323px) {
   .pub-wrap__img {
@@ -1132,6 +1135,7 @@ body {
 }
 
 .btn-primary-2 {
+  display: contents;
   background-color: transparent;
   border-color: transparent;
   border-radius: 8px;
@@ -1140,6 +1144,12 @@ body {
   color: #323264;
   background-color: #e6e6f0;
   border-color: #e6e6f0;
+}
+
+@media (max-width: 510px) {
+  .d-none-2 {
+    display: none;
+  }
 }
 
 .logo-svg-2 {
@@ -1296,4 +1306,10 @@ body {
 }
 .article-wrap__social-networks-img {
   max-width: 42px;
+  padding: 9px;
+  background-color: #f5f5fa;
+  border-radius: 12px;
+}
+.article-wrap__social-networks-img:hover {
+  background-color: #ededf7;
 }
