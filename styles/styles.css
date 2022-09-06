@@ -318,7 +318,7 @@ body {
   content: "";
   position: absolute;
   height: 100%;
-  left: -10px;
+  left: -12px;
   display: block;
   padding-top: 45px;
 }
@@ -379,6 +379,10 @@ body {
 
 .offcanvas-header {
   justify-content: end;
+}
+
+.offcanvas.offcanvas-bottom {
+  height: 380px;
 }
 
 .logo {
@@ -472,6 +476,25 @@ body {
     padding-bottom: 60px;
   }
 }
+@media (max-width: 768px) {
+  .slider-wrap__buttons {
+    padding-bottom: 30px;
+  }
+}
+.slider-wrap .carousel-item {
+  max-width: 861px;
+  padding: 30px 30px 0 30px;
+}
+@media (min-width: 768px) {
+  .slider-wrap .carousel-item {
+    padding: 60px 60px 0 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .slider-wrap .carousel-item {
+    padding: 43px 0 43px 60px;
+  }
+}
 .slider-wrap__help-box {
   width: 450px;
   height: 46px;
@@ -551,7 +574,6 @@ body {
   margin-bottom: 30px;
 }
 .slider-wrap__content-txt {
-  max-width: 861px;
   line-height: 30px;
   font-size: 19px;
 }
@@ -654,6 +676,7 @@ body {
   max-width: 400px;
 }
 .cards-wrap__icon {
+  margin-bottom: 30px;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -690,15 +713,17 @@ body {
   width: 100%;
   height: 344px;
   border-radius: 12px 0 0 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-@media (max-width: 1281px) {
+@media (max-width: 1285px) {
   .team-slider__img {
-    min-height: 378px;
+    min-height: 386px;
   }
 }
 @media (max-width: 1065px) {
   .team-slider__img {
-    min-height: 424px;
+    min-height: 432px;
   }
 }
 @media (max-width: 966px) {
@@ -737,6 +762,7 @@ body {
 .team-slider__h4 {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 4px;
   margin-bottom: 5px;
   margin-top: 30px;
@@ -780,11 +806,27 @@ body {
   margin-bottom: 30px;
 }
 
-.slider-img {
+.slider-btns {
   display: flex;
   justify-content: center;
+  gap: 15px;
   margin-top: 30px;
   margin-bottom: 60px;
+}
+
+.blue-color {
+  background-color: #24A3FF !important;
+  opacity: 1 !important;
+}
+
+.slider-btn {
+  max-width: 16px;
+  height: 16px;
+  width: 100%;
+  border: none;
+  border-radius: 50%;
+  background-color: #24A3FF;
+  opacity: 0.2;
 }
 
 .container-logo {
@@ -921,6 +963,10 @@ body {
     max-width: 420px;
   }
 }
+.pub-wrap .last-card__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 @media (max-width: 948px) {
   .pub-wrap .last-card__img {
     height: 275px;
@@ -936,6 +982,7 @@ body {
 @media (max-width: 550px) {
   .pub-wrap .last-card__img {
     max-width: 420px;
+    height: 200px;
   }
 }
 .pub-wrap__img {
